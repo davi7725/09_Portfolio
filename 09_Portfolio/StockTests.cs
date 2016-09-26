@@ -70,7 +70,7 @@ namespace _09_Portfolio
             Stock stockHP = new Stock("HPQ", 60.03, 120);
             Stock stockIBM = new Stock("IBM", 32.11, 50);
 
-           Stock[] stocks = new Stock[2];
+            Stock[] stocks = new Stock[2];
             stocks[0] = stockHP;
             stocks[1] = stockIBM;
 
@@ -82,7 +82,7 @@ namespace _09_Portfolio
         {
             Stock stockABC = new Stock("ABC", 12.23, 50);
 
-            Assert.AreEqual("Stock[symbol=ABC,pricePerShare=12.23,numShares=50]", stockABC.ToString());
+            Assert.AreEqual("Stock[symbol=ABC,pricePerShare=12,23,numShares=50]", stockABC.ToString());
         }
 
         
@@ -108,7 +108,5 @@ namespace _09_Portfolio
             Assert.IsTrue(!stock1.Equals(stock3));
             Assert.IsTrue(!stock1.Equals(stock4));
         }
-
-
     }
 }
