@@ -70,7 +70,7 @@ namespace _09_Portfolio
             Stock stockHP = new Stock("HPQ", 60.03, 120);
             Stock stockIBM = new Stock("IBM", 32.11, 50);
 
-            Stock[] stocks = new Stock[2];
+            IAsset[] stocks = new IAsset[2];
             stocks[0] = stockHP;
             stocks[1] = stockIBM;
 

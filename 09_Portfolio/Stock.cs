@@ -2,7 +2,7 @@
 
 namespace _09_Portfolio
 {
-    internal class Stock
+    internal class Stock : IAsset
     {
         public Stock(string symbol, double pricePerShare, int numShares)
         {
@@ -13,21 +13,33 @@ namespace _09_Portfolio
 
         public Stock()
         {
-
+            
         }
 
         public int NumShares { get; internal set; }
         public double PricePerShare { get; internal set; }
         public string Symbol { get; internal set; }
 
-        internal double GetValue()
+        public double GetValue()
         {
             return PricePerShare * NumShares;
+            
         }
 
-        internal static double TotalValue(Stock[] stocks)
+        internal static double TotalValue(IAsset[] stocks)
         {
-            return stocks[0].GetValue() + stocks[1].GetValue();
+            double totalValue = 0;
+            foreach(IAsset stock in stocks)
+            {
+                totalValue = totalValue + stock.GetValue();
+            }
+            
+
+
+            return totalValue;
+
+
+
         }
 
         public override string ToString()
